@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- I don't know bootstrap yet so I chose to experiments with it from the solutions page -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Show Info</title>
+</head>
+<body>
+    
+    <div class="container">
+        <a href="/">Go Back</a>
+        <h1>TV Show {{ info.id }}</h1>
+        <p> Title: {{ info.title }}</p>
+        <p>Network: {{ info.network }}</p>
+        <p>Release Date: {{ info.release_date }}</p>
+        <p>Description: {{ info.description }} </p>
+        <p>Last Updated: {{ info.updated_at }}</p>
+        <a href="/shows/{{ info.id }}/edit">Edit</a>
+        <a href="/shows/{{ info.id }}/destroy">Delete</a>
+    </div>
+</body>
+</html>
